@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Indice de masa corporal</title>
+	<style>
+		body {background-color:orange;}
+	</style>
+</head>
+<body>
+	
+	<h1>Calculadora de indice de masa corporal</h1>
+
+	<input type="text" id="peso"value="Peso">
+	<input type="text" id="altura"value="Altura"><br><br>
+	<input type="button" id="calcular" value="Calcula">
+	<input type="text" id="result"value="IMC">
+	
+	<script type="text/javascript">
+		console.log("FUNCIONA");
+		document.getElementById("calcular").addEventListener("click",calcularMasa);
+		function calcularMasa(){
+			var peso = document.getElementById("peso").value;
+			var altura = document.getElementById("altura").value;
+			console.log("Tu IMC");
+			document.getElementById("result").value = peso/(altura*altura);
+		}
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liga ACB
+	</title>
+	<style>
+		body {background-color:orange;}
+	</style>
+</head>
+<body>
+	
+	<h1>LIGA ACB</h1>
+
+	<input type="text" id="nombre1"value="nombre equipo 1">
+	<input type="text" id="puntos1.1"value="puntos partido 1">
+	<input type="text" id="puntos1.2"value="puntos partido 2">
+	<input type="text" id="puntos1.3"value="puntos partido 3">
+	<input type="text" id="nombre2"value="nombre equipo 2">
+	<input type="text" id="puntos2.1"value="puntos partido 1">
+	<input type="text" id="puntos2.2"value="puntos partido 2">
+	<input type="text" id="puntos2.3"value="puntos partido 3">
+	<input type="button" id="calcular" value="Calcular media">
+	<input type="text" id="mediaW"value="Media">
+	<input type="text" id="ganadorW"value="Ganador">
+	
+	<script type="text/javascript">
+		document.getElementById("calcular").addEventListener("click",calcularMedia);
+		function calcularMedia(){
+			var p1 = document.getElementById("puntos1.1").value;
+			var p2 = document.getElementById("puntos1.2").value;
+			var p3 = document.getElementById("puntos1.3").value;
+			var m1 = (parseInt(p1) +  parseInt(p2) +  parseInt(p3)) / 3;
+
+			var pp1 = document.getElementById("puntos2.1").value;
+			var pp2 = document.getElementById("puntos2.2").value;
+			var pp3 = document.getElementById("puntos2.3").value;
+			var mm1 = (parseInt(pp1) +  parseInt(pp2) +  parseInt(pp3)) /3 ;
+
+			var mediawinner = (m1 > mm1) ? m1 : mm1;
+			var namewinner = (mediawinner == m1) ? document.getElementById("nombre1").value : document.getElementById("nombre2").value;
+
+			document.getElementById("mediaW").value = mediawinner;
+			document.getElementById("ganadorW").value = namewinner;
+		}
+		
+		
+	</script>
+</body>
+</html>
