@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Propina 
+	</title>
+	<style>
+		body {background-color:orange;}
+	</style>
+</head>
+<body>
+	
+	<h1>Calculador de propina</h1>
+
+	<input type="text" id="precio"value="precio de la comida">
+	<br><br>
+	<input type="button" id="calcular" value="Calcular Propina">
+	<br><br>
+	<input type="text" id="propina"value="La propina es ">
+	
+	<script type="text/javascript">
+		document.getElementById("calcular").addEventListener("click",calcularProp);
+		function calcularProp(){
+			var p1 = document.getElementById("precio").value;
+			var d1 = p1*0.2;
+			var d2 = p1*0.15;
+			var d3 = p1*0.1;
+
+			var propina1 = (p1 < 50) ? d1 : d2;
+			var propinaFinal = (p1 > 200) ? d3 : propina1;
+			
+			document.getElementById("propina").value = propinaFinal;
+			
+		}
+		
+		
+	</script>
+</body>
+</html>
